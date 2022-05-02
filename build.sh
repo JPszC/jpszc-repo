@@ -7,6 +7,15 @@
 
 set -e
 
+echo "###################################"
+echo "Running Cleanup and Makepkg Scrips."
+echo "###################################"
+
+cd ../jpszc-pkgbuild/
+./cleanup.sh
+./build-packages.sh
+cd ../jpszc-repo/
+
 x86_pkgbuild=$(find ../jpszc-pkgbuild/x86_64 -type f -name "*.pkg.tar.zst*")
 
 for x in ${x86_pkgbuild}
